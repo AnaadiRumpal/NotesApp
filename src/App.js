@@ -93,7 +93,7 @@ function App() {
     
   };
 
-  let content = <p>Found no notes.</p>;
+  let content = <div className=' h-screen text-xl text-center'><p>Found No Notes!!</p></div>;
 
   if (notes.length > 0) {
     content = <NotesList notes={notes} onDeleteNote={deleteNoteHandler} />;
@@ -104,7 +104,7 @@ function App() {
   }
 
   if (isLoading) {
-    content = <div className=' h-screen text-center'><p>Loading...</p></div>;
+    content = <div className='text-xl h-screen text-center'><p>Loading...</p></div>;
   }
 
   const noteAddedCloseModalHandler = () => {
@@ -114,7 +114,7 @@ function App() {
   return (
     <div className="bg-black h-full">
       <div className='font-sans w-full text-white p-8 bg-transparent'>
-        <div className='text-4xl font-bold tracking-wide text-left'>Hi Anaadi</div>
+        <div className='text-4xl font-bold tracking-wide text-left'>Hello Anaadi,<br></br> Here are your latest notes  </div>
         <button onClick={openModalHandler} className='bg-white text-black rounded-full p-4 mt-8 flex font-bold text-xl'>+ Add Note</button>
         {isModalOpen && (
             <Modal onClose={closeModalHandler} onNoteAdded= {noteAddedCloseModal}>
@@ -124,7 +124,7 @@ function App() {
             </Modal>
           )}
         
-        <div>{content}</div>
+        <div className='h-full'>{content}</div>
       </div>
     </div>
   );

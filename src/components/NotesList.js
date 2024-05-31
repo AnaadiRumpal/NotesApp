@@ -8,7 +8,7 @@ const NotesList = (props) => {
       {props.notes.map((note) => (
         
         <li key={note.id}>
-          <div className='bg-white bg-opacity-20 mt-6 p-4 rounded-3xl'>
+          <div className='bg-gradient-to-bl from-sky-400 shadow-lg shadow-sky-700 to-blue-300  mt-6 p-4 text-black rounded-3xl'>
             <Notes heading={note.heading} text={note.text} dateTime={note.dateTime} />
             <div className='text-right w-full'>
               <button className='' onClick={() => props.onDeleteNote(note.id)}>

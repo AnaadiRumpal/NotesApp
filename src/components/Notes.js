@@ -12,17 +12,17 @@ const Notes = (props) => {
     <li className="">
       <div className='flex flex-col'>
         <div className='flex flex-row mb-4'>
-          <div className='bg-white text-center bg-opacity-20 p-2 mr-4 rounded-xl border-b-2 border-white'>
+          <div className='bg-sky-900 text-center  p-2 mr-4 rounded-xl border-b-2 text-white border-white'>
             <p className='text-md font-semibold'>{month} {day}</p>
             <p className='text-sm'>{year}</p>
           </div>
           <div className='flex  flex-col'> 
-            <div><p className='text-2xl font-semibold mb-4'>{props.heading}</p></div>
-            <div className=' text-sm w-fit text-gray-400'>      <p>{time}</p></div>
+            <div><p className='text-2xl font-bold mb-4'>{props.heading}</p></div>
+            <div className=' text-sm w-fit font-semibold text-gray-800'>      <p>{time}</p></div>
           </div>
           
         </div>
-        <div>      <p>{props.text}</p></div>
+        <div>      <p className='font-semibold'>{props.text}</p></div>
       </div>
       
       

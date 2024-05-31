@@ -57,17 +57,16 @@ function AddNote(props) {
 
   return (
     <form onSubmit={submitHandler} className='w-full'>
-      <div className='text-right mb-4'>
-        <button className='bg-blue-600 p-4 px-8 rounded-full text-white font-bold'>Add Note</button>
+      <div className=' flex justify-between items-center w-full mb-4'>
+        <div className='text-black text-3xl font-bold pl-2'>New Note</div>
+        <div><button className=' bg-gradient-to-br  from-blue-600 to-sky-500 p-4 px-8 rounded-full text-white font-bold'>Add Note</button></div>
       </div>
 
       <div >
-        <div className='rounded-2xl p-4 bg-white font-semibold'><input type='text' className='bg-white w-full  text-2xl text-black placeholder:text-gray-400' placeholder="Heading"ref={headingRef} /></div>
+        <input type='text' className='bg-white w-full font-semibold p-4 rounded-2xl text-2xl text-black placeholder:text-gray-400' placeholder="Heading"ref={headingRef} />
       </div>
       <div>
-        <div className='rounded-2xl p-4 mt-4 bg-white font-semibold'>
-          <textarea rows='30' className='bg-white  rounded-2xl w-full text-xl text-black' ref={textRef} placeholder='Type Here..'></textarea>
-        </div>
+        <textarea rows='30' className='bg-white p-4 mt-4 font-semibold  rounded-2xl w-full text-xl text-black placeholder:text-gray-400' ref={textRef} placeholder='Type Here..'></textarea>
       </div>
 
 
