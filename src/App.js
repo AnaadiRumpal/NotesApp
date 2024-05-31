@@ -8,6 +8,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
+  const [noteAddedCloseModal, setnoteAddedCloseModal] = useState(false);
+
 
   const fetchNotesHandler = useCallback(async () => {
     setIsLoading(true);
@@ -82,11 +84,13 @@ function App() {
   }
 
   const openModalHandler = () => {
+    setnoteAddedCloseModal(false);
     setIsModalOpen(true);
   };
 
   const closeModalHandler = () => {
     setIsModalOpen(false);
+    
   };
 
   let content = <p>Found no notes.</p>;
@@ -100,8 +104,12 @@ function App() {
   }
 
   if (isLoading) {
-    content = <p>Loading...</p>;
+    content = <div className=' h-screen text-center'><p>Loading...</p></div>;
   }
+
+  const noteAddedCloseModalHandler = () => {
+    setnoteAddedCloseModal(true);
+  };
 
   return (
     <div className="bg-black h-full">
@@ -109,9 +117,9 @@ function App() {
         <div className='text-4xl font-bold tracking-wide text-left'>Hi Anaadi</div>
         <button onClick={openModalHandler} className='bg-white text-black rounded-full p-4 mt-8 flex font-bold text-xl'>+ Add Note</button>
         {isModalOpen && (
-            <Modal onClose={closeModalHandler}>
+            <Modal onClose={closeModalHandler} onNoteAdded= {noteAddedCloseModal}>
               <div className='rounded-3xl w-full bg-gray-200 p-4 mt-8'>
-                <AddNote onAddNote={addNoteHandler} />
+                <AddNote onAddNote={addNoteHandler} onClose={noteAddedCloseModalHandler} />
               </div>
             </Modal>
           )}

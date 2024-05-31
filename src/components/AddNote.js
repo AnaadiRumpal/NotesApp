@@ -19,6 +19,7 @@ function AddNote(props) {
     };
 
     props.onAddNote(note);
+    props.onClose();
   }
 
   React.useEffect(() => {
@@ -61,11 +62,11 @@ function AddNote(props) {
       </div>
 
       <div >
-        <div className='rounded-2xl p-4 bg-white font-semibold'><input type='text' className='bg-white w-full  text-3xl text-black placeholder:text-gray-400' placeholder="Heading"ref={headingRef} /></div>
+        <div className='rounded-2xl p-4 bg-white font-semibold'><input type='text' className='bg-white w-full  text-2xl text-black placeholder:text-gray-400' placeholder="Heading"ref={headingRef} /></div>
       </div>
       <div>
         <div className='rounded-2xl p-4 mt-4 bg-white font-semibold'>
-          <textarea rows='30' className='bg-white  rounded-2xl w-full text-2xl text-black' ref={textRef} placeholder='Type Here..'></textarea>
+          <textarea rows='30' className='bg-white  rounded-2xl w-full text-xl text-black' ref={textRef} placeholder='Type Here..'></textarea>
         </div>
       </div>
 
