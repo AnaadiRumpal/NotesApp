@@ -93,7 +93,7 @@ function App() {
     
   };
 
-  let content = <div className=' h-screen text-xl text-center'><p>Found No Notes!!</p></div>;
+  let content = <div className=' h-screen p-12 text-xl text-center'><p>Found No Notes!!</p></div>;
 
   if (notes.length > 0) {
     content = <NotesList notes={notes} onDeleteNote={deleteNoteHandler} />;
@@ -104,7 +104,7 @@ function App() {
   }
 
   if (isLoading) {
-    content = <div className='text-xl h-screen text-center'><p>Loading...</p></div>;
+    content = <div className='text-xl h-screen p-12 text-center'><p>Loading...</p></div>;
   }
 
   const noteAddedCloseModalHandler = () => {
